@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include "jni.h"
+
+
+JNIEXPORT void JNICALL Java_ejemplo_Llamada_imprime_1saludo(JNIEnv * env, jclass obj, jstring src){
+       
+    const char* utf8String = (*env)->GetStringUTFChars(env, src, NULL);
+    if (utf8String != NULL) {
+        // Tenemos que parsear el jstring de java a char* de C
+        // Son metodos de JNI
+        printf("Ke paza pitxa %s\n", utf8String);
+
+        // Libera la memoria del puntero UTF-8, que la liamos
+        (*env)->ReleaseStringUTFChars(env, src, utf8String);
+    } else {
+        fprintf(stderr, "Error al obtener el puntero UTF-8\n");
+    }
+        
+    
+}
+
+// gcc -I"C:\Program Files\Java\jdk-21.0.2\include" -I"C:\Program Files\Java\jdk-21.0.2\include\win32" -shared -o llamada.dll llamada.c
