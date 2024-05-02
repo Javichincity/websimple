@@ -9,8 +9,13 @@ NO TOCAR NADA EN ESTE ARCHIVO*/
 extern "C" {
 #endif
 /*
+<<<<<<< Upstream, based on branch 'master' of https://github.com/Javichincity/websimple
  * Class:     ejemplo_Llamada (La clase de Java sobre la que trabaja)
  * Method:    imprime_saludo (El metodo de la clase de Java)
+=======
+ * Class:     ejemplo_Llamada
+ * Method:    imprime_saludo
+>>>>>>> 3573081 JNI finalizado
  * Signature: (Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_ejemplo_Llamada_imprime_1saludo
